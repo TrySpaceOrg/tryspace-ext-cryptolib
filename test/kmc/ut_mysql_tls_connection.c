@@ -53,7 +53,7 @@ mysql -u testuser1 -p -h asec-cmdenc-dev2.jpl.nasa.gov --ssl-ca=/etc/pki/tls/cer
 #include "ut_tc_apply.h"
 #include "utest.h"
 #include "crypto_error.h"
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_error.h"
 #include "sa_interface.h"
 #include "crypto_config_structs.h"

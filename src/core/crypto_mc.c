@@ -19,7 +19,7 @@
 /*
 ** Includes
 */
-#include "crypto.h"
+#include "cryptolib.h"
 
 /**
  * CCSDS Compliance Reference:

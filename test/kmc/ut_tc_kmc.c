@@ -22,7 +22,7 @@
 
 #include "ut_tc_apply.h"
 #include "ut_tc_process.h"
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_error.h"
 #include "sa_interface.h"
 #include "utest.h"

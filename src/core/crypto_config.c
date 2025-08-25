@@ -20,7 +20,7 @@
 ** Includes
 */
 #include <string.h>
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_events.h"
 
 /**

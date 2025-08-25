@@ -22,7 +22,7 @@
 /*
 ** Includes
 */
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_structs.h"
 
 /*

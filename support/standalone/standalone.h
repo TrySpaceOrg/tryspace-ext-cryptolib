@@ -40,7 +40,7 @@ extern "C"
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_config.h"
 
 /*
