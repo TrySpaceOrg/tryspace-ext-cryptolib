@@ -1,0 +1,10 @@
+FROM tryspaceorg/tryspace-lab:0.0.0
+
+# Copy built FSW files into the image
+COPY build/support/standalone /app/standalone
+
+# Set working directory
+WORKDIR /app
+
+# Set command to run
+CMD ["/app/standalone"]

@@ -4,12 +4,22 @@
 
 # The "LOCALTGTS" defines the top-level targets that are implemented in this makefile
 # Any other target may also be given, in that case it will simply be passed through.
-LOCALTGTS := all clean debug internal kmc wolf
+LOCALTGTS := all clean debug internal kmc tryspace wolf
 OTHERTGTS := $(filter-out $(LOCALTGTS),$(MAKECMDGOALS))
 
 # As this makefile does not build any real files, treat everything as a PHONY target
 # This ensures that the rule gets executed even if a file by that name does exist
 .PHONY: $(LOCALTGTS) $(OTHERTGTS)
+
+export BUILDDIR ?= $(CURDIR)/build
+export BUILD_IMAGE ?= tryspaceorg/tryspace-lab:0.0.0
+export RUNTIME_CRYPTOLIB_IMAGE_NAME ?= tryspace-cryptolib
+export TRYLABDIR ?= $(CURDIR)/..
+
+# Determine number of parallel jobs to avoid maxing out low-power systems (Raspberry Pi etc.).
+# Use `nproc - 1` but ensure at least 1 job.
+NPROC := $(shell nproc 2>/dev/null || echo 1)
+JOBS := $(shell if [ $(NPROC) -le 1 ]; then echo 1; else expr $(NPROC) - 1; fi)
 
 #
 # Commands
@@ -20,7 +30,7 @@ all:
 	$(MAKE) wolf
 
 clean:
-	rm -rf ./build
+	rm -rf $(BUILDDIR)
 	rm -rf ./docs/wiki/_build
 
 debug:
@@ -34,6 +44,11 @@ internal:
 
 kmc:
 	./support/scripts/kmc_docker_build.sh
+
+tryspace: clean
+	mkdir -p  $(BUILDDIR)
+	docker run --rm -it -v $(TRYLABDIR):$(TRYLABDIR) --name "tryspace_cryptolib_build" -w $(BUILDDIR) --user $(shell id -u):$(shell id -g) $(BUILD_IMAGE) sh -c 'cmake .. -DDEBUG=1 -DMC_INTERNAL=1 -DSA_FILE=1 -DCRYPTO_LIBGCRYPT=1 -DKEY_INTERNAL=1 -DSA_INTERNAL=1 -DSUPPORT=1 && make -j$(JOBS)'
+	docker build -t $(RUNTIME_CRYPTOLIB_IMAGE_NAME) -f support/Dockerfile.standalone .
 
 wolf:
 	./support/scripts/wolf_docker_build.sh
