@@ -12,7 +12,7 @@
  * foreign persons.
  */
 
-#include "crypto.h"
+#include "cryptolib.h"
 #include <stdio.h>
 #include <stdlib.h>
 

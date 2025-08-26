@@ -20,7 +20,7 @@
  *  Unit Tests that make use of TC_ProcessSecurity function on the data.
  **/
 #include "ut_tc_process.h"
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_error.h"
 #include "crypto_print.h"
 #include "sa_interface.h"

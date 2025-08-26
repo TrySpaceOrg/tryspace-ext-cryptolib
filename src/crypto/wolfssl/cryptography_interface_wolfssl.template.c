@@ -27,7 +27,7 @@
 #include <wolfssl/wolfcrypt/wc_port.h>
 #include <wolfssl/version.h>
 
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_error.h"
 #include "cryptography_interface.h"
 

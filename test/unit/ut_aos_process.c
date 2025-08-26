@@ -20,7 +20,7 @@
  *  Unit Tests that make use of AOS_ProcessSecurity function on the data.
  **/
 #include "ut_aos_process.h"
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_error.h"
 #include "sa_interface.h"
 #include "utest.h"

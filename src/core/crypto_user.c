@@ -19,7 +19,7 @@
 /*
 ** Includes
 */
-#include "crypto.h"
+#include "cryptolib.h"
 
 /**
  * @brief Function: Crypto_User_IdleTrigger

@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <signal.h>
 #include <setjmp.h>
-#include "crypto.h"
+#include "cryptolib.h"
 
 // Global variables
 static jmp_buf crash_jmp_buf;

@@ -1,5 +1,5 @@
 from Crypto.Cipher import AES
-from Crypto.Hash import CMAC, HMAC, SHA256, SHA512
+from cryptolib.hash import CMAC, HMAC, SHA256, SHA512
 import codecs
 import sys
 

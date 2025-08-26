@@ -20,7 +20,7 @@
  *  Unit Tests that make use of TC_ApplySecurity/TC_ProcessSecurity function on the data with KMC Crypto Service/MariaDB
  *Functionality Enabled.
  **/
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_error.h"
 #include "sa_interface.h"
 #include "utest.h"
