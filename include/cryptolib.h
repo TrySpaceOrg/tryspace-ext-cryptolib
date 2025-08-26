@@ -43,7 +43,6 @@
 #include "key_interface.h"
 #include "mc_interface.h"
 #include "sa_interface.h"
-#include "cryptolib.h"
 
 /*
 ** Crypto Version
