@@ -1,6 +1,8 @@
 FROM tryspaceorg/tryspace-lab:0.0.0
+ENV LD_LIBRARY_PATH=/app
 
-# Copy built FSW files into the image
+# Copy built files into the image
+COPY build/libcryptolib.so /app/libcryptolib.so
 COPY build/support/standalone /app/standalone
 
 # Set working directory

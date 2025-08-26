@@ -47,7 +47,7 @@ kmc:
 
 tryspace: clean
 	mkdir -p  $(BUILDDIR)
-	docker run --rm -it -v $(TRYLABDIR):$(TRYLABDIR) --name "tryspace_cryptolib_build" -w $(BUILDDIR) --user $(shell id -u):$(shell id -g) $(BUILD_IMAGE) sh -c 'cmake .. -DDEBUG=1 -DMC_INTERNAL=1 -DSA_FILE=1 -DCRYPTO_LIBGCRYPT=1 -DKEY_INTERNAL=1 -DSA_INTERNAL=1 -DSUPPORT=1 && make -j$(JOBS)'
+	docker run --rm -it -v $(TRYLABDIR):$(TRYLABDIR) --name "tryspace_cryptolib_build" -w $(BUILDDIR) --user $(shell id -u):$(shell id -g) $(BUILD_IMAGE) sh -c 'cmake .. -DMC_INTERNAL=1 -DCRYPTO_LIBGCRYPT=1 -DKEY_INTERNAL=1 -DSA_INTERNAL=1 -DSUPPORT=1 && make -j$(JOBS)'
 	docker build -t $(RUNTIME_CRYPTOLIB_IMAGE_NAME) -f support/Dockerfile.standalone .
 
 wolf:
