@@ -1,4 +1,4 @@
-FROM tryspaceorg/tryspace-lab:0.0.0
+FROM tryspaceorg/tryspace-lab:0.0.1
 ENV LD_LIBRARY_PATH=/app
 
 # Copy built files into the image

@@ -12,7 +12,7 @@ OTHERTGTS := $(filter-out $(LOCALTGTS),$(MAKECMDGOALS))
 .PHONY: $(LOCALTGTS) $(OTHERTGTS)
 
 export BUILDDIR ?= $(CURDIR)/build
-export BUILD_IMAGE ?= tryspaceorg/tryspace-lab:0.0.0
+export BUILD_IMAGE ?= tryspaceorg/tryspace-lab:0.0.1
 export RUNTIME_CRYPTOLIB_IMAGE_NAME ?= tryspace-cryptolib
 export TRYLABDIR ?= $(CURDIR)/..
 
