@@ -13,7 +13,9 @@ OTHERTGTS := $(filter-out $(LOCALTGTS),$(MAKECMDGOALS))
 
 export BUILDDIR ?= $(CURDIR)/build
 export BUILD_IMAGE ?= tryspaceorg/tryspace-lab:0.0.1
-export RUNTIME_CRYPTOLIB_IMAGE_NAME ?= tryspace-cryptolib
+export RUNTIME_CRYPTOLIB_IMAGE_NAME ?= tryspace-cryptolib-$(MISSION)
+export SPACECRAFT ?= latest
+export MISSION ?= default
 export TRYLABDIR ?= $(CURDIR)/..
 
 # Determine number of parallel jobs to avoid maxing out low-power systems (Raspberry Pi etc.).
@@ -48,7 +50,7 @@ kmc:
 tryspace: clean
 	mkdir -p  $(BUILDDIR)
 	docker run --rm -it -v $(TRYLABDIR):$(TRYLABDIR) --name "tryspace_cryptolib_build" -w $(BUILDDIR) --user $(shell id -u):$(shell id -g) $(BUILD_IMAGE) sh -c 'cmake .. -DMC_INTERNAL=1 -DCRYPTO_LIBGCRYPT=1 -DKEY_INTERNAL=1 -DSA_INTERNAL=1 -DSUPPORT=1 && make -j$(JOBS)'
-	docker build -t $(RUNTIME_CRYPTOLIB_IMAGE_NAME) -f support/Dockerfile.standalone .
+	docker build -t $(RUNTIME_CRYPTOLIB_IMAGE_NAME):$(SPACECRAFT) -f support/Dockerfile.standalone .
 
 wolf:
 	./support/scripts/wolf_docker_build.sh
