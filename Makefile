@@ -13,8 +13,9 @@ OTHERTGTS := $(filter-out $(LOCALTGTS),$(MAKECMDGOALS))
 
 export BUILDDIR ?= $(CURDIR)/build
 export BUILD_IMAGE ?= tryspaceorg/tryspace-lab:0.0.1
-export RUNTIME_CRYPTOLIB_IMAGE_NAME ?= tryspace-cryptolib
+export RUNTIME_CRYPTOLIB_IMAGE_NAME ?= tryspace-cryptolib-$(MISSION)
 export SPACECRAFT ?= latest
+export MISSION ?= default
 export TRYLABDIR ?= $(CURDIR)/..
 
 # Determine number of parallel jobs to avoid maxing out low-power systems (Raspberry Pi etc.).
