@@ -43,7 +43,6 @@
 #include "key_interface.h"
 #include "mc_interface.h"
 #include "sa_interface.h"
-#include "crypto.h"
 
 /*
 ** Crypto Version
@@ -337,11 +336,6 @@ extern KeyInterface                          key_if;
 extern McInterface                           mc_if;
 extern SaInterface                           sa_if;
 extern CryptographyInterface                 cryptography_if;
-
-// extern crypto_key_t ak_ring[NUM_KEYS];
-extern SadbMariaDBConfig_t      *sa_mariadb_config;
-extern GvcidManagedParameters_t *gvcid_managed_parameters;
-extern GvcidManagedParameters_t *current_managed_parameters;
 
 // OCF
 extern uint8_t                    ocf;

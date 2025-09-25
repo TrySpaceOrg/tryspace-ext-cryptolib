@@ -31,7 +31,7 @@
 static volatile uint8_t keepRunning    = CRYPTO_LIB_SUCCESS;
 static volatile uint8_t tc_seq_num     = 0;
 static volatile uint8_t tc_vcid        = CRYPTO_STANDALONE_FRAMING_VCID;
-static volatile uint8_t tc_debug       = 1;
+static volatile uint8_t tc_debug       = 0;
 static volatile uint8_t tm_debug       = 0;
 static volatile uint8_t crypto_use_tcp = STANDALONE_TCP ? 1 : 0;
 
@@ -867,7 +867,7 @@ void *crypto_standalone_tm_process(void *socks)
             /* Reset */
             memset(tm_process_in, 0x00, sizeof(tm_process_in));
             tm_process_len = 0;
-            memset(tm_ptr, 0x00, sizeof(tm_process_in));
+            // Don't memset tm_ptr - it points to CryptoLib's internal buffer!
 #ifdef CRYPTO_STANDALONE_TM_PROCESS_DEBUG
             printf("\n");
 #endif

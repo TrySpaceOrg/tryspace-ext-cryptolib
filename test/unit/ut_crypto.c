@@ -19,8 +19,8 @@
 /**
  *  Unit Tests that macke use of CRYPTO_C functionality on the data.
  **/
-#include "ut_crypto.h"
-#include "crypto.h"
+#include "ut_cryptolib.h"
+#include "cryptolib.h"
 #include "crypto_error.h"
 #include "sa_interface.h"
 #include "utest.h"

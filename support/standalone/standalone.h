@@ -40,27 +40,27 @@ extern "C"
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_config.h"
 
 /*
 ** Configuration
 */
-#define CRYPTOLIB_HOSTNAME "cryptolib"
-#define GSW_HOSTNAME       "cosmos"
-#define SC_HOSTNAME        "radio-sim"
+#define CRYPTOLIB_HOSTNAME "tryspace-cryptolib"
+#define GSW_HOSTNAME       "tryspace-gsw"
+#define SC_HOSTNAME        "tryspace-director"
 
 #ifndef CRYPTO_RX_GROUND_PORT
-#define TC_APPLY_PORT 6010
+#define TC_APPLY_PORT 12345
 #endif
 #ifndef CRYPTO_RX_GROUND_PORT
-#define TC_APPLY_FWD_PORT 8010
+#define TC_APPLY_FWD_PORT 12343
 #endif
 #ifndef CRYPTO_RX_GROUND_PORT
-#define TM_PROCESS_PORT 8011
+#define TM_PROCESS_PORT 12344
 #endif
 #ifndef CRYPTO_RX_GROUND_PORT
-#define TM_PROCESS_FWD_PORT 6011
+#define TM_PROCESS_FWD_PORT 12346
 #endif
 
 #define CRYPTO_STANDALONE_HANDLE_FRAMING

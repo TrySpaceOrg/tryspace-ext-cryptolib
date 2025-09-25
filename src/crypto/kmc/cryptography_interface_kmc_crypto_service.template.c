@@ -14,7 +14,7 @@
 
 #include "crypto_error.h"
 #include "cryptography_interface.h"
-#include "crypto.h"
+#include "cryptolib.h"
 
 #include <stdio.h>
 #include <string.h>

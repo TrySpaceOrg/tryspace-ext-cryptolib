@@ -24,7 +24,7 @@
 #include "sa_interface.h"
 #include "utest.h"
 
-#include "crypto.h"
+#include "cryptolib.h"
 #include "shared_util.h"
 #include <stdio.h>
 

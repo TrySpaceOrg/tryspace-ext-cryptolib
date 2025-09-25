@@ -20,7 +20,7 @@
  *  Unit Tests that make use of TM_ApplySecurity function on the data.
  **/
 #include "ut_tm_apply.h"
-#include "crypto.h"
+#include "cryptolib.h"
 #include "crypto_error.h"
 #include "sa_interface.h"
 #include "utest.h"
